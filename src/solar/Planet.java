@@ -16,20 +16,22 @@ public class Planet extends Star {
     double degree;      //飞行的角度
     Star center;
 
-    public void draw(Graphics g){
-        g.drawImage(img, (int)x, (int)y, null);
+    public void draw(Graphics g) {
+        g.drawImage(img, (int) x, (int) y, null);
 
         //沿着椭圆轨迹飞行
-        x = center.x + longAxis*Math.cos(degree);
-        y = center.y + shortAxis*Math.sin(degree);
+        x = center.x + center.width / 2 + longAxis * Math.cos(degree);
+        y = center.y + center.height / 2 + shortAxis * Math.sin(degree);
 
         degree += speed;
     }
-/**
- * 封装需要的属性
- * */
+
+    /**
+     * 封装需要的属性
+     */
     public Planet(String imgPath, Star center, double longAxis, double shortAxis, double speed) {
 
+        super(GameUtil.getImage(imgPath));  //调用父类构造器，得到图片宽度、高度
         this.center = center;
         this.x = center.x + longAxis;
         this.y = center.y;
