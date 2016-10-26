@@ -5,6 +5,6 @@ package util;
  * Created by hzq on 16-10-25.
  */
 public class Constant {
-    public static final int GAME_WIDTH = 800;
-    public static final int GAME_HEIGHT = 500;
+    public static final int GAME_WIDTH = 900;
+    public static final int GAME_HEIGHT = 900;
 }

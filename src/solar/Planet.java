@@ -16,9 +16,18 @@ public class Planet extends Star {
     double degree;      //飞行的角度
     Star center;
 
-    public void draw(Graphics g) {
-        g.drawImage(img, (int) x, (int) y, null);
+    boolean satellite;  //判断是否为卫星
 
+    public void draw(Graphics g) {
+//        g.drawImage(img, (int) x, (int) y, null);
+        super.draw(g);
+        move();
+        if(!satellite){
+            drawTrace(g);
+        }
+    }
+
+    public void move() {
         //沿着椭圆轨迹飞行
         x = center.x + center.width / 2 + longAxis * Math.cos(degree);
         y = center.y + center.height / 2 + shortAxis * Math.sin(degree);
@@ -26,9 +35,23 @@ public class Planet extends Star {
         degree += speed;
     }
 
+    public void drawTrace(Graphics g) {
+        double _x, _y, _width, _height; //shift+F6 Refactor 变量全部重命名
+
+        _width = longAxis * 2;
+        _height = shortAxis * 2;
+        _x = center.x + center.width / 2 - longAxis;
+        _y = center.y + center.height / 2 - shortAxis;
+        Color c = g.getColor();
+        g.setColor(Color.blue);
+        g.drawOval((int)_x, (int)_y, (int)_width, (int)_height);
+        g.setColor(c);
+    }
+
     /**
      * 封装需要的属性
      */
+
     public Planet(String imgPath, Star center, double longAxis, double shortAxis, double speed) {
 
         super(GameUtil.getImage(imgPath));  //调用父类构造器，得到图片宽度、高度
@@ -39,6 +62,11 @@ public class Planet extends Star {
         this.longAxis = longAxis;
         this.shortAxis = shortAxis;
         this.speed = speed;
+    }
+
+    public Planet(String imgPath, Star center, double longAxis, double shortAxis, double speed, boolean satellite) {
+        this(imgPath,center,longAxis,shortAxis,speed);
+        this.satellite = satellite;
     }
 
     public Planet(Image img, double x, double y) {
