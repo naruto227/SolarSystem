@@ -14,7 +14,7 @@ public class GameUtil {
     private GameUtil() {
     }//工具类通常会将构造方法私有
 
-    /*public static Image getImage(String path){
+    public static Image getImage(String path){
         URL u = GameUtil.class.getClassLoader().getResource(path);
         BufferedImage img = null;
         try {
@@ -23,9 +23,9 @@ public class GameUtil {
             e.printStackTrace();
         }
         return img;
-    }*/
-    public static Image getImage(String path){
-        return Toolkit.getDefaultToolkit().getImage(GameUtil.class.getClassLoader().getResource(path));
     }
+//    public static Image getImage(String path){
+//        return Toolkit.getDefaultToolkit().getImage(GameUtil.class.getClassLoader().getResource(path));
+//    }
 
 }

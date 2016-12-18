@@ -37,11 +37,12 @@ public class MyFrame extends Frame {
             while (true) {
                 repaint();
                 try {
-                    Thread.sleep(45);   //1s = 1000ms
+                    Thread.sleep(100);   //1s = 1000ms
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         }
     }
+
 }
