@@ -16,8 +16,8 @@ public class SolarFrame extends MyFrame {
 
     Star sun = new Star("images/sun.jpg", Constant.GAME_WIDTH / 2, Constant.GAME_HEIGHT / 2);   //对象的属性初始化
 
-    Planet mercury = new Planet("images/Mercury.jpg", sun, 50, 40, 0.008); //水星
-    Planet venus = new Planet("images/Venus.jpg", sun, 65, 55, 0.01); //金星
+    Planet mercury = new Planet("images/Mercury.jpg", sun, 50, 40, 0.008); //水星绕太阳转
+    Planet venus = new Planet("images/Venus.jpg", sun, 65, 55, 0.01); //金星绕太阳转
 
     Planet earth = new Planet("images/Earth.jpg", sun, 90, 80, 0.015); //地球
     Planet moon = new Planet("images/moon.jpg", earth, 18, 16, 0.06, true);  //月亮
