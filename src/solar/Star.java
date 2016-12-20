@@ -19,6 +19,7 @@ public class Star {
         g.drawImage(img, (int) x, (int) y, null);
     }
 
+    //构造方法初始化变量
     public Star(Image img) {
         this.img = img;
         this.width = img.getWidth(null);
