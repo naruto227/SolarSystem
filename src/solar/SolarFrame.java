@@ -34,7 +34,7 @@ public class SolarFrame extends MyFrame {
     public void paint(Graphics g) { //paint()方法
         g.drawImage(bg, 0, 0, null);
 //        g.drawImage(bg1, 50, 50, null);
-        sun.draw(g);
+        sun.draw(g);//画太阳
 
         mercury.draw(g);
         venus.draw(g);
