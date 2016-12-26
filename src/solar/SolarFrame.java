@@ -14,7 +14,7 @@ public class SolarFrame extends MyFrame {
     Image bg = GameUtil.getImage("images/bg.jpg");
 //    Image bg1 = GameUtil.getImage("images/sun.jpg");
 
-    Star sun = new Star("images/sun.jpg", Constant.GAME_WIDTH / 2, Constant.GAME_HEIGHT / 2);   //对象的属性初始化
+    Star sun = new Star("images/sun.jpg", Constant.GAME_WIDTH / 2, Constant.GAME_HEIGHT / 2);   //对象的属性初始化,太阳
 
     Planet mercury = new Planet("images/Mercury.jpg", sun, 50, 40, 0.008); //水星绕太阳转
     Planet venus = new Planet("images/Venus.jpg", sun, 65, 55, 0.01); //金星绕太阳转..
@@ -34,7 +34,7 @@ public class SolarFrame extends MyFrame {
     public void paint(Graphics g) { //paint()方法
         g.drawImage(bg, 0, 0, null);
 //        g.drawImage(bg1, 50, 50, null);
-        sun.draw(g);
+        sun.draw(g);//画太阳
 
         mercury.draw(g);
         venus.draw(g);
