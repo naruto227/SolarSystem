@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
-/**
+/**hehe
  * 游戏开发中常用的工具类（比如加载图片等方法）
  * Created by hzq on 16-10-24.
  */
